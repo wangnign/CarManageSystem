@@ -1,0 +1,42 @@
+<!-- 登入的界面 -->
+<div class="row">
+	<!-- 第一列，图片 -->
+	<div class="col-sm-6">
+		<img src="images/bus.jpg" style="width:600px;height:420px;" />
+	</div>
+	
+	
+	<!-- 第二列 -->
+	<div class="col-sm-5" align="left">
+		<form id="form_login" class="form-horizontal" role="form" onsubmit="return false;">
+			<div class="form-group">
+		    	<label class="col-sm-3 control-label"></label>
+		    	<div class="col-sm-9">
+		      		<p class="form-control-static">请填写用户名和密码</p>
+		    	</div>
+		  	</div>
+			<div class="form-group">
+			    <label for="username" class="col-sm-3 control-label">用户名：</label>
+			    <div class="col-sm-9">
+			      <input type="text" class="form-control" value="admin" name="username" placeholder="请输入用户名">
+			    </div>
+			  </div>
+			<div class="form-group">
+			    <label for="password" class="col-sm-3 control-label">密码：</label>
+			    <div class="col-sm-9">
+			      <input type="password" class="form-control" value="admin" name="password" placeholder="请输入密码">
+			      <input type="hidden" name="cls" value="TDengluController" />
+			      <input type="hidden" name="mtd" value="login" />
+			      
+			    </div>
+			  </div>
+			  
+			<div class="form-group" align="center">
+				<button type="button" class="btn btn-default" onclick="fnlogin();">
+		                登入
+		            </button>
+			</div>
+			<a href="#" onclick="zhuce();">没有帐号？请注册</a>
+		</form>
+	</div>
+</div>

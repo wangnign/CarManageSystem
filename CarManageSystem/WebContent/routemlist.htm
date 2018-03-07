@@ -1,0 +1,98 @@
+<div class="row" align="left">
+	<!-- ��һ�У����İ༶�б� -->
+<div class="col-sm-1">
+</div>	
+
+<div class="col-sm-10">
+	<!-- ��һ�У� ���пγ��б� -->
+	<div class="panel panel-default">
+	    <div class="panel-heading">
+	        <h3 class="panel-title">
+	           车站线路列表
+	        </h3>
+	    </div>
+	    <div class="panel-body">
+	        
+			<table class="table table-striped">
+			  <caption><button onclick="roum_openDlgAdd();"><span class="glyphicon glyphicon-plus"></span>新增车站基本信息</button></caption>
+			  <thead>
+			    <tr>
+			      <th>线路号</th>
+			      <th>出发地</th>
+			      <th>目的地</th>
+			      <th>价格</th>
+			      <th>总票数</th>
+			      <th>所需时间</th>
+			      <th>&nbsp;</th>
+			    </tr>
+			  </thead>
+			  <tbody id="tbody_roumlist">
+			    
+			  </tbody>
+			</table>
+	    </div>
+	</div>
+</div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="dialog_roumam" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="modal_stuam_title">车站线路基本资料</h4>
+            </div>
+            <div class="modal-body">
+            	<form id="form_roum_am" class="form-horizontal" role="form" onsubmit="return false;">
+            		<div class="form-group">
+					    <label for="xianluhao" class="col-sm-3 control-label">线路号：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="xianluhao" placeholder="请输入线路号">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="chufadi" class="col-sm-3 control-label">出发地：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="chufadi" placeholder="请输入出发地">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="mudidi" class="col-sm-3 control-label">目的地：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="mudidi" placeholder="请输入目的地">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="jiage" class="col-sm-3 control-label">价格：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="jiage" placeholder="请输入价格">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="zongpiaoshu" class="col-sm-3 control-label">总票数：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="zongpiaoshu" placeholder="请输入总票数">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="suoxushijian" class="col-sm-3 control-label">所需时间：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="suoxushijian" placeholder="请输入所需时间">
+					    </div>
+					</div>
+				
+					
+					        <input type="hidden" name="cls" value="RoutemController" />
+			      			<input type="hidden" name="mtd" value="addModify" />
+			      			<input type="hidden" name="id" value="0" />
+					   
+					
+            	</form>
+            </div>
+            <div class="modal-footer">
+            	<button type="button" class="btn btn-primary" onclick="roum_add();">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>

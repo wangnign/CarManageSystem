@@ -1,0 +1,110 @@
+<div class="row" align="left">
+	<!-- ��һ�У����İ༶�б� -->
+<div class="col-sm-1">
+</div>	
+
+<div class="col-sm-10">
+	<!-- ��һ�У� ���пγ��б� -->
+	<div class="panel panel-default">
+	    <div class="panel-heading">
+	        <h3 class="panel-title">
+	           乘客列表
+	        </h3>
+	    </div>
+	    <div class="panel-body">
+	        
+			<table class="table table-striped">
+			  <caption><button onclick="per_openDlgAdd();"><span class="glyphicon glyphicon-plus"></span>新增乘客基本信息</button></caption>
+			  <thead>
+			    <tr>
+			      <th>身份证号</th>
+			      <th>姓名</th>
+			      <th>购买数量</th>
+			      <th>性别</th>
+			      <th>线路号</th>
+			      <th>出发时间</th>
+			      <th>车号</th>
+			     
+			      <th>&nbsp;</th>
+			    </tr>
+			  </thead>
+			  <tbody id="tbody_perlist">
+			    
+			  </tbody>
+			</table>
+	    </div>
+	</div>
+</div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="dialog_peram" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="modal_stuam_title">乘客基本资料</h4>
+            </div>
+            <div class="modal-body">
+            	<form id="form_per_am" class="form-horizontal" role="form" onsubmit="return false;">
+            		<div class="form-group">
+					    <label for="idcard" class="col-sm-3 control-label">身份证：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="idcard" placeholder="请输入身份证">
+					    </div>
+					</div>
+            		<div class="form-group">
+					    <label for="name" class="col-sm-3 control-label">姓名：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="name" placeholder="请输入姓名">
+					    </div>
+					</div>
+					
+					<div class="form-group">
+					     <label for="sex" class="col-sm-3 control-label">性别：</label>
+					    <div class="col-sm-9">
+					      <select name="sex" class="form-control">
+					      	<option value="男">男</option>
+					      	<option value="女">女</option> </select>
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="xianluhao" class="col-sm-3 control-label">线路号：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="xianluhao" placeholder="请输入线路号">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="chufashijian" class="col-sm-3 control-label">出发时间：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="chufashijian" placeholder="请输入出发时间">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="chehao" class="col-sm-3 control-label">车号：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="chehao" placeholder="请输入车号">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="password" class="col-sm-3 control-label">购买数量：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="password" placeholder="请输入购买数量">
+					    </div>
+					</div>
+				
+					
+					     
+					        <input type="hidden" name="cls" value="PersonController" />
+			      			<input type="hidden" name="mtd" value="addModify" />
+			      			<input type="hidden" name="id" value="0" />
+					 
+					
+       	      </form>
+            </div>
+            <div class="modal-footer">
+            	<button type="button" class="btn btn-primary" onclick="per_add();">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>

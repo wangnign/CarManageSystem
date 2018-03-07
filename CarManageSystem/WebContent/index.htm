@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>WeWeb</title>
+<!-- Bootstrap -->
+<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" rel="stylesheet"> -->
+
+</head>
+<body style="padding-top:55px;">
+	<!-- 导航栏-置顶 -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">长途汽车管理系统</a>
+			</div>
+			<div>
+				<!-- 定义登入之后的各个功能模块的连接 -->
+				<ul id="ul_topleft" class="nav navbar-nav" style="display:none;">
+					<li><a href="#" onclick="route();">实时线路信息管理</a></li>
+					
+					
+					
+				</ul>	
+				<ul id="ul_topleft2" class="nav navbar-nav" style="display:none;">
+				<li><a href="#" onclick="person();">乘客信息管理</a></li>
+				<li><a href="#" onclick="routem();">车站线路信息管理</a></li>
+                <li><a href="#" onclick="bus();">车辆信息管理</a></li>
+				</ul>
+				<ul id="ul_topleft3" class="nav navbar-nav" style="display:none;">
+					
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"> 其它 <b class="caret"></b>
+					</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">jmeter</a></li>
+							<li><a href="#">EJB</a></li>
+							<li><a href="#">Jasper Report</a></li>
+							<li class="divider"></li>
+							<li><a href="#">分离的链接</a></li>
+							<li class="divider"></li>
+							<li><a href="#">另一个分离的链接</a></li>
+						</ul></li>
+				</ul>
+				
+				<ul id="ul_topright" class="nav navbar-nav navbar-right" style="display:none;">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<span class="glyphicon glyphicon-user"></span><span id="loginUser_name">操作员</span><b class="caret"></b>
+						</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">个人中心</a></li>
+								<li class="divider"></li>
+								<li><a href="####" onclick="fnLogout();"><span class="glyphicon glyphicon-log-out"></span>退出</a></li>
+							</ul>
+					</li>
+				</ul>
+				
+			</div>
+		</div>
+	</nav>
+	<!-- 各个界面放置到这里 -->
+	<div class="container" id="mainContainer" style="width:95%" align="center"></div>
+	
+	
+	<!-- 加载bootstrap需要的js和自定义的js -->
+	<script src="bootstrap-3.3.5-dist/js/jquery.min.js"></script>
+	<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+	<script src="bootstrap-3.3.5-dist/js/jquery.tmpl.min.js"></script>
+	<script src="bootstrap-3.3.5-dist/icekingutil.js"></script>
+	<script src="index.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/route.js"></script>
+	<script src="js/routem.js"></script>
+	<script src="js/bus.js"></script>
+	<script src="js/person.js"></script>
+	<script src="js/userlist.js"></script>
+	<script src="js/stulist.js"></script>
+	
+</body>
+</html>

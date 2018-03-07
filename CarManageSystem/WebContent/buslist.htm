@@ -1,0 +1,101 @@
+<div class="row" align="left">
+	<!-- 第一列，左侧的车型列表 -->
+<div class="col-sm-3">
+	<div class="panel panel-default">
+	    <div class="panel-heading">
+	        <h3 class="panel-title">
+	            车型列表
+	        </h3>
+	    </div>
+	    <div id="div_chexing" class="panel-body">
+	        
+	    </div>
+	</div>
+</div>
+	
+
+<div class="col-sm-9">
+	<!-- 第一列，每个车型的车辆列表 -->
+	<div class="panel panel-default">
+	    <div class="panel-heading">
+	        <h3 class="panel-title">
+	            车辆列表
+	        </h3>
+	    </div>
+	    <div class="panel-body">
+	        
+			<table class="table table-striped">
+			  <caption><button onclick="bus_openDlgAdd();"><span class="glyphicon glyphicon-plus"></span>新增车辆基本资料</button></caption>
+			  <thead>
+			    <tr>
+			      <th>购买年份</th>
+			      <th>车号</th>
+			      <th>车型</th>
+			      <th>最大载客量</th>
+			      <th>&nbsp;</th>
+			    </tr>
+			  </thead>
+			  <tbody id="tbody_buslist">
+			    
+			  </tbody>
+			</table>
+	    </div>
+	</div>
+</div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="dialog_busam" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="modal_stuam_title">车辆基本资料</h4>
+            </div>
+            <div class="modal-body">
+            	<form id="form_bus_am" class="form-horizontal" role="form" onsubmit="return false;">
+            		<div class="form-group">
+					    <label for="goumainian" class="col-sm-3 control-label">购买年份：</label>
+					    <div class="col-sm-9">
+					      <select name="goumainian" class="form-control">
+					        <option value="2017">2017</option>
+					      	<option value="2016">2016</option>
+					      	<option value="2015">2015</option>
+					      	<option value="2014">2014</option>
+					      	<option value="2013">2013</option>
+					      	<option value="2012">2012</option>
+					      </select>
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="chexing" class="col-sm-3 control-label">车型：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="chexing" placeholder="请输入车型">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="chehao" class="col-sm-3 control-label">车号：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="chehao" placeholder="请输入车号">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="zuidazaikeliang" class="col-sm-3 control-label">最大载客量：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="zuidazaikeliang" placeholder="请输入最大载客量">
+					    <input type="hidden" name="cls" value="BusController" />
+			      			<input type="hidden" name="mtd" value="addModify" />
+			      			<input type="hidden" name="id" value="0" />
+					    </div>
+					</div>
+            	</form>
+            </div>
+		  	    
+					
+					      
+            <div class="modal-footer">
+            	<button type="button" class="btn btn-primary" onclick="bus_add();">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>

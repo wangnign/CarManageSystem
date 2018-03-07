@@ -1,0 +1,250 @@
+<div class="row" align="left">
+	<!-- 第一列，左侧的班级列表 -->
+<div class="col-sm-3">
+	<div class="panel panel-default">
+	    <div class="panel-heading">
+	        <h3 class="panel-title">
+	             日期列表
+	        </h3>
+	    </div>
+	    <div id="div_rouchufariqi" class="panel-body">
+	        
+	    </div>
+	</div>
+</div>
+	
+
+<div class="col-sm-9">
+	<!-- 第一列，每个类型的帐号列表 -->
+	<div class="panel panel-default">
+	    <div class="panel-heading">
+	        <h3 class="panel-title">
+	           线路列表
+	        </h3>
+	    </div>
+	    <div class="panel-body">
+	        
+			<table class="table table-striped">
+			  <caption><button onclick="rou_openDlgAdd();"><span class="glyphicon glyphicon-plus"></span>新
+
+增线路基本信息</button></caption>
+			  <thead>
+			    <tr>
+			      <th>线路号</th>
+			      <th>出发地</th>
+			      <th>目的地</th>
+			      <th>出发日期</th>
+			      <th>出发时间</th>
+			      <th>所需时间</th>
+			      <th>价格</th>
+			      <th>剩余票数</th>
+			      <th>总票数</th>
+			      <th>&nbsp;</th>
+			     </tr>
+			  </thead>
+			  <tbody id="tbody_roulist">
+			    
+			  </tbody>
+			</table>
+	    </div>
+	</div>
+</div>
+</div>
+<!-- 模态框（buy） -->
+<div class="modal fade" id="dialog_buy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="modal_stuam_title">购买信息</h4>
+            </div>
+            <div class="modal-body">
+            	<form id="form_rou1_am" class="form-horizontal" role="form" onsubmit="return false;">
+            		<div class="form-group">
+					    <label for="idcard" class="col-sm-3 control-label">身份证：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="idcard" placeholder="请输入
+
+身份证">
+					    </div>
+					</div>
+            		<div class="form-group">
+					    <label for="name" class="col-sm-3 control-label">姓名：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="name" placeholder="请输入姓
+
+名">
+					    </div>
+					</div>
+					<div class="form-group">
+					     <label for="sex" class="col-sm-3 control-label">性别：</label>
+					    <div class="col-sm-9">
+					      <select name="sex" class="form-control">
+					      	<option value="男">男</option>
+					      	<option value="女">女</option> </select>
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="chehao" class="col-sm-3 control-label">车号：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="chehao" placeholder="请输入车
+
+号">
+					    </div>
+					</div>
+					
+					<div class="form-group">
+					    <label for="xianluhao" class="col-sm-3 control-label">线路号：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="xianluhao" placeholder="请输
+
+入线路号">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="chufashijian" class="col-sm-3 control-label">出发时间：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="chufashijian" placeholder="请
+
+输入出发时间">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="password" class="col-sm-3 control-label">购买的数量
+
+</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="password" placeholder="请输入购买
+
+的数量">
+
+					    </div>
+					</div>
+				
+					
+					     
+					        <input type="hidden" name="cls" value="PersonController" />
+			      			<input type="hidden" name="mtd" value="addModify1" />
+			      			
+			      			<input type="hidden" name="id" value="0" />
+					 
+					
+       	      </form>
+            </div>
+            <div class="modal-footer">
+            	<button type="button" class="btn btn-primary" onclick="buy();">提交</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="dialog_rouam" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="modal_stuam_title">线路基本资料</h4>
+            </div>
+            <div class="modal-body">
+            	<form id="form_rou_am" class="form-horizontal" role="form" onsubmit="return false;">
+            		<div class="form-group">
+					    <label for="xianluhao" class="col-sm-3 control-label">线路号：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="xianluhao" placeholder="请输
+
+入线路号">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="chufadi" class="col-sm-3 control-label">出发地：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="chufadi" placeholder="请输入
+
+出发地">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="mudidi" class="col-sm-3 control-label">目的地：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="mudidi" placeholder="请输入
+
+目的地">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="chufariqi" class="col-sm-3 control-label">出发日期：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="chufariqi" placeholder="请输
+
+入出发日期">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="chufashijian" class="col-sm-3 control-label">出发时间：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="chufashijian" placeholder="请
+
+输入出发时间">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="suoxushijian" class="col-sm-3 control-label">所需时间：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="suoxushijian" placeholder="请
+
+输入所需时间">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="jiage" class="col-sm-3 control-label">价格：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="jiage" placeholder="请输入价
+
+格">
+					    </div>
+					</div>
+				<div class="form-group">
+					    <label for="zongpiaoshu" class="col-sm-3 control-label">总票数：</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" name="zongpiaoshu" placeholder="
+
+请输入总票数">
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label for="shengyupiaoshu" class="col-sm-3 control-label">剩余票数：
+
+</label>
+					    <div class="col-sm-9">
+					      <select name="shengyupiaoshu" class="form-control">
+					      	<option value="1">1</option>
+					      	<option value="2">2</option>
+					      	<option value="3">3</option>
+					      	<option value="4">4</option>
+					      	<option value="5">5</option>
+					      	<option value="6">6</option>
+					      	<option value="7">7</option>
+					      	<option value="8">8</option>
+					      	<option value="9">9</option>
+					      	<option value="10">10</option>
+					      </select>
+					      
+					        <input type="hidden" name="cls" value="RouteController" />
+			      			<input type="hidden" name="mtd" value="addModify" />
+			      			<input type="hidden" name="id" value="0" />
+					    </div>
+					</div>
+            	</form>
+            </div>
+            <div class="modal-footer">
+            	<button type="button" class="btn btn-primary" onclick="rou_add();">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
