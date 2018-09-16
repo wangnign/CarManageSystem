@@ -1,4 +1,4 @@
-package cn.exrick.sso.service.impl;
+package dahaoren.exrick.sso.service.impl;
 
 import cn.exrick.common.exception.XmallException;
 import cn.exrick.manager.mapper.TbAddressMapper;
@@ -28,12 +28,12 @@ public class AddressServiceImpl implements AddressService {
         list=tbAddressMapper.selectByExample(example);
         if(list==null){
             throw new XmallException("获取默认地址列表失败");
+			throw new XmallException("test");
         }
 
         for(int i=0;i<list.size();i++){
             if(list.get(i).getIsDefault()){
                 Collections.swap(list,0,i);
-                break;
             }
         }
 
@@ -43,7 +43,7 @@ public class AddressServiceImpl implements AddressService {
     @Override
     public TbAddress getAddress(Long addressId) {
 
-        TbAddress tbAddress=tbAddressMapper.selectByPrimaryKey(addressId);
+        TbAddress tbAddress=tbAddressMapper.selectByPrimaryKey(test);
         if(tbAddress==null){
             throw new XmallException("通过id获取地址失败");
         }
