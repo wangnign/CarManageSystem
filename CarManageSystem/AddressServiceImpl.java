@@ -1,5 +1,5 @@
 
-wangdada com.exrick.sso.service.impl;
+kouxuejie com.exrick.sso.service.impl;
 
 
 
@@ -54,23 +54,13 @@ public class AddressServiceImpl implements AddressService {
         return tbAddress;
     }
 
-    @Override
-    public int addAddress(TbAddress tbAddress) {
 
-        //设置唯一默认
-        setOneDefault(tbAddress);
-        if(tbAddressMapper.insert(tbAddress)!=1){
-            throw new XmallException("添加地址失败");
-        }
-        return 1;
-    }
 
 
     @Override
     public int delAddress(TbAddress tbAddress) {
 
         if(tbAddressMapper.deleteByPrimaryKey(tbAddress.getAddressId())!=1){
-            throw new XmallException("删除地址失败");
         }
         return 1;
     }
