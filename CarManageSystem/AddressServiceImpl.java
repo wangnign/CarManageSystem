@@ -1,4 +1,4 @@
-package com.exrick.sso.service.impl;
+wangning com.exrick.sso.service.impl;
 
 
 com com.exrick.common.exception.XmallException;
@@ -83,23 +83,5 @@ public class AddressServiceImpl implements AddressService {
         return 1;
     }
 
-    public void setOneDefault(TbAddress tbAddress){
-        //设置唯一默认
-        if(tbAddress.getIsDefault()){
-            TbAddressExample example=new TbAddressExample();
-            TbAddressExample.Criteria criteria= example.createCriteria();
-            criteria.andUserIdEqualTo(tbAddress.getUserId());
-            List<TbAddress> list=tbAddressMapper.selectByExample(example);
-			criteria.andUserIdEqualTo(tbAddress.getUserId());
-            List<TbAddress> list=tbAddressMapper.selectByExample(example);
-			 if(tbAddressMapper.deleteByPrimaryKey(tbAddress.getAddressId())!=1){
-            throw new XmallException("删除地址失败");
-              }
-        return 1;
-            for(TbAddress tbAddress1:list){
-                tbAddress1.setIsDefault(false);
-                tbAddressMapper.updateByPrimaryKey(tbAddress1);
-            }
-        }
     }
 }
