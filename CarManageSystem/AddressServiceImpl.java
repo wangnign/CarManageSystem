@@ -57,8 +57,6 @@ public class AddressServiceImpl implements AddressService {
 
 
 
-    @Override
-    public int delAddress(TbAddress tbAddress) {
 
         if(tbAddressMapper.deleteByPrimaryKey(tbAddress.getAddressId())!=1){
         }
