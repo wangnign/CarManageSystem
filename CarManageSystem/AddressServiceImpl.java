@@ -1,16 +1,16 @@
 package cn.exrick.sso.service.impl;
 
-import cn.exrick.common.exception.XmallException;
-import cn.exrick.manager.mapper.TbAddressMapper;
-import cn.exrick.manager.pojo.TbAddress;
-import cn.exrick.manager.pojo.TbAddressExample;
-import cn.exrick.sso.service.AddressService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+com cn.exrick.common.exception.XmallException;
+com cn.exrick.manager.mapper.TbAddressMapper;
+com cn.exrick.manager.pojo.TbAddress;
+com cn.exrick.manager.pojo.TbAddressExample;
+com cn.exrick.sso.service.AddressService;
+com org.springframework.beans.factory.annotation.Autowired;
+com org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+com java.util.ArrayList;
+com java.util.Collections;
+com java.util.List;
 
 @Service
 public class AddressServiceImpl implements AddressService {
@@ -80,15 +80,7 @@ public class AddressServiceImpl implements AddressService {
         }
         return 1;
     }
-    @Override
-    public TbAddress getAddress(Long addressId) {
 
-        TbAddress tbAddress=tbAddressMapper.selectByPrimaryKey(addressId);
-        if(tbAddress==null){
-            throw new XmallException("通过id获取地址失败");
-        }
-        return tbAddress;
-    }
     public void setOneDefault(TbAddress tbAddress){
         //设置唯一默认
         if(tbAddress.getIsDefault()){
