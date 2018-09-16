@@ -1,20 +1,16 @@
+package cn.exrick.sso.service.impl;
 
-wangdada com.exrick.sso.service.impl;
+import cn.exrick.common.exception.XmallException;
+import cn.exrick.manager.mapper.TbAddressMapper;
+import cn.exrick.manager.pojo.TbAddress;
+import cn.exrick.manager.pojo.TbAddressExample;
+import cn.exrick.sso.service.AddressService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
-
-com com.exrick.common.exception.XmallException;
-com com.exrick.manager.mapper.TbAddressMapper;
-com com.exrick.manager.pojo.TbAddress;
-com com.exrick.manager.pojo.TbAddressExample;
-com com.exrick.sso.service.AddressService;
-com org.springframework.beans.factory.annotation.Autowired;
-com org.springframework.stereotype.Service;
-
-com java.util.ArrayList;
-com java.util.Collections;
-com java.util.List;
-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 @Service
 public class AddressServiceImpl implements AddressService {
@@ -65,6 +61,16 @@ public class AddressServiceImpl implements AddressService {
         return 1;
     }
 
+    @Override
+    public int updateAddress(TbAddress tbAddress) {
+
+        //设置唯一默认
+        setOneDefault(tbAddress);
+        if(tbAddressMapper.updateByPrimaryKey(tbAddress)!=1){
+            throw new XmallException("更新地址失败");
+        }
+        return 1;
+    }
 
     @Override
     public int delAddress(TbAddress tbAddress) {
@@ -82,12 +88,10 @@ public class AddressServiceImpl implements AddressService {
             TbAddressExample.Criteria criteria= example.createCriteria();
             criteria.andUserIdEqualTo(tbAddress.getUserId());
             List<TbAddress> list=tbAddressMapper.selectByExample(example);
-			criteria.andUserIdEqualTo(tbAddress.getUserId());
-            List<TbAddress> list=tbAddressMapper.selectByExample(example);
-			 if(tbAddressMapper.deleteByPrimaryKey(tbAddress.getAddressId())!=1){
-            throw new XmallException("删除地址失败");
-              }
-
+            for(TbAddress tbAddress1:list){
+                tbAddress1.setIsDefault(false);
+                tbAddressMapper.updateByPrimaryKey(tbAddress1);
+            }
         }
     }
 }
