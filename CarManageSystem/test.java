@@ -69,7 +69,7 @@ public class AddressServiceImpl implements AddressService {
         //设置唯一默认
         setOneDefault(tbAddress);
         if(tbAddressMapper.updateByPrimaryKey(tbAddress)!=1){
-            throw new XmallException("更新地址失败");
+            throw new XmallException("");
         }
         return 1;
     }
