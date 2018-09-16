@@ -1,4 +1,4 @@
-package com.exrick.sso.service.impl;
+test com.exrick.sso.service.impl;
 
 
 com com.exrick.common.exception.XmallException;
@@ -95,11 +95,7 @@ public class AddressServiceImpl implements AddressService {
 			 if(tbAddressMapper.deleteByPrimaryKey(tbAddress.getAddressId())!=1){
             throw new XmallException("删除地址失败");
               }
-        return 1;
-            for(TbAddress tbAddress1:list){
-                tbAddress1.setIsDefault(false);
-                tbAddressMapper.updateByPrimaryKey(tbAddress1);
-            }
+
         }
     }
 }
