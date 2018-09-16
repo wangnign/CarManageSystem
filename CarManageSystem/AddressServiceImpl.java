@@ -1,4 +1,6 @@
-test com.exrick.sso.service.impl;
+
+wangdada com.exrick.sso.service.impl;
+
 
 
 com com.exrick.common.exception.XmallException;
@@ -63,16 +65,6 @@ public class AddressServiceImpl implements AddressService {
         return 1;
     }
 
-    @Override
-    public int updateAddress(TbAddress tbAddress) {
-
-        //设置唯一默认
-        setOneDefault(tbAddress);
-        if(tbAddressMapper.updateByPrimaryKey(tbAddress)!=1){
-            throw new XmallException("更新地址失败");
-        }
-        return 1;
-    }
 
     @Override
     public int delAddress(TbAddress tbAddress) {
