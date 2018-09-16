@@ -63,16 +63,7 @@ public class AddressServiceImpl implements AddressService {
         return 1;
     }
 
-    @Override
-    public int updateAddress(TbAddress tbAddress) {
 
-        //设置唯一默认
-        setOneDefault(tbAddress);
-        if(tbAddressMapper.updateByPrimaryKey(tbAddress)!=1){
-            throw new XmallException("");
-        }
-        return 1;
-    }
 
     @Override
     public int delAddress(TbAddress tbAddress) {
