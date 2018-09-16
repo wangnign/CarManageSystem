@@ -80,7 +80,15 @@ public class AddressServiceImpl implements AddressService {
         }
         return 1;
     }
+    @Override
+    public TbAddress getAddress(Long addressId) {
 
+        TbAddress tbAddress=tbAddressMapper.selectByPrimaryKey(addressId);
+        if(tbAddress==null){
+            throw new XmallException("通过id获取地址失败");
+        }
+        return tbAddress;
+    }
     public void setOneDefault(TbAddress tbAddress){
         //设置唯一默认
         if(tbAddress.getIsDefault()){
