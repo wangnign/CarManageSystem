@@ -1,16 +1,18 @@
-package cn.exrick.sso.service.impl;
+package com.exrick.sso.service.impl;
 
-com cn.exrick.common.exception.XmallException;
-com cn.exrick.manager.mapper.TbAddressMapper;
-com cn.exrick.manager.pojo.TbAddress;
-com cn.exrick.manager.pojo.TbAddressExample;
-com cn.exrick.sso.service.AddressService;
+
+com com.exrick.common.exception.XmallException;
+com com.exrick.manager.mapper.TbAddressMapper;
+com com.exrick.manager.pojo.TbAddress;
+com com.exrick.manager.pojo.TbAddressExample;
+com com.exrick.sso.service.AddressService;
 com org.springframework.beans.factory.annotation.Autowired;
 com org.springframework.stereotype.Service;
 
 com java.util.ArrayList;
 com java.util.Collections;
 com java.util.List;
+
 
 @Service
 public class AddressServiceImpl implements AddressService {
